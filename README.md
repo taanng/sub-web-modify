@@ -5,7 +5,7 @@
 ### 使用方法：
 建议使用Docker一键部署:
 ```
-docker run -d --restart always -p 8090:80 --name sub-web-modify youshandefeiyang/sub-web-modify
+docker run -d --restart unless-stopped --privileged=true -p 8090:80 --name sub-web-modify taanng/sub-web
 ```
 或使用docker compose
 ```yaml
@@ -23,5 +23,5 @@ services:
 
 访问地址举例:
 ```
-http://192.168.10.1:8090/?backend=https://url.v1.mk
+http://192.168.1.1:8090/?backend=https://url.v1.mk
 ```
