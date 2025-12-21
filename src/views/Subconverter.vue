@@ -498,15 +498,15 @@ export default {
             options: [
               {
                 label: "tang配置ACL4SSR",
-                value: "https://cdn.jsdelivr.net/gh/taanng/clash_rule@master/ACL4SSR_Online_custom.ini"
+                value: "https://raw.githubusercontent.com/taanng/clash_rule/refs/heads/master/ACL4SSR_Online_custom.ini"
               },
-	            {
+              {
                 label: "tang配置loyalsoldier",
-                value: "https://cdn.jsdelivr.net/gh/taanng/clash_rule@master/loyalsoldier_rules.ini"
+                value: "https://raw.githubusercontent.com/taanng/clash_rule/refs/heads/master/loyalsoldier_rules.ini"
               },
               {
                 label: "tang修改Aethersailor配置",
-                value: "https://cdn.jsdelivr.net/gh/taanng/clash_rule@master/Custom_Clash_custom.ini"
+                value: "https://raw.githubusercontent.com/taanng/clash_rule/refs/heads/master/Custom_Clash_custom.ini"
               },
               {
                 label: "Aethersailor原始配置",
