@@ -909,7 +909,7 @@ export default {
         rename: "",
         devid: "",
         interval: "",
-        diyua: "",
+        diyua: "ShadowRocket",
         emoji: true,
         nodeList: false,
         extraset: false,
@@ -1433,6 +1433,7 @@ export default {
   }
 };
 </script>
+
 
 
 
