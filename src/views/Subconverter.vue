@@ -479,6 +479,7 @@ export default {
         },
         customBackend: {
           "taanng远程": "http://uv.vsky.top:25500",
+          "taanng本地": "http://192.168.2.2:25500",
           "肥羊增强型后端【vless reality+anytls】": "https://api.v1.mk",
           "肥羊备用后端【vless reality+anytls】": "https://url.v1.mk",
         },
@@ -495,12 +496,16 @@ export default {
                 value: "https://raw.githubusercontent.com/taanng/clash_rule/refs/heads/master/ACL4SSR_Online_custom.ini"
               },
               {
-                label: "tang配置loyalsoldier",
-                value: "https://raw.githubusercontent.com/taanng/clash_rule/refs/heads/master/loyalsoldier_rules.ini"
-              },
-              {
                 label: "tang修改Aethersailor配置",
                 value: "https://raw.githubusercontent.com/taanng/clash_rule/refs/heads/master/Custom_Clash_custom.ini"
+              },
+              {
+                label: "tang配置ACL4SSR(CDN)",
+                value: "https://testingcf.jsdelivr.net/gh/taanng/clash_rule@master/ACL4SSR_Online_custom.ini"
+              },
+              {
+                label: "tang修改Aethersailor配置(CDN)",
+                value: "https://testingcf.jsdelivr.net/gh/taanng/clash_rule@master/Custom_Clash_custom.ini"
               },
               {
                 label: "Aethersailor原始配置",
