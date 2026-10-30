@@ -479,6 +479,8 @@ export default {
           "sub.cm": "https://sub.cm/short",
         },
         customBackend: {
+          "taanng远程": "http://uv.vsky.top:25500",
+          "taanng本地": "http://192.168.2.2:25500",
           "肥羊增强型后端【vless reality+anytls】": "https://api.v1.mk",
           "肥羊备用后端【vless reality+anytls】": "https://url.v1.mk",
         },
@@ -490,6 +492,26 @@ export default {
           {
             label: "通用",
             options: [
+              {
+                label: "tang配置ACL4SSR",
+                value: "https://raw.githubusercontent.com/taanng/clash_rule/refs/heads/master/ACL4SSR_Online_custom.ini"
+              },
+              {
+                label: "tang修改Aethersailor配置",
+                value: "https://raw.githubusercontent.com/taanng/clash_rule/refs/heads/master/Custom_Clash_custom.ini"
+              },
+              {
+                label: "tang配置ACL4SSR(CDN)",
+                value: "https://testingcf.jsdelivr.net/gh/taanng/clash_rule@master/ACL4SSR_Online_custom.ini"
+              },
+              {
+                label: "tang修改Aethersailor配置(CDN)",
+                value: "https://testingcf.jsdelivr.net/gh/taanng/clash_rule@master/Custom_Clash_custom.ini"
+              },
+              {
+                label: "Aethersailor原始配置",
+                value: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/cfg/Custom_Clash.ini"
+              },
               {
                 label: "默认",
                 value: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_NoAuto.ini"
@@ -1007,7 +1029,7 @@ export default {
       }
     },
     tanchuang() {
-      this.$alert(`<div style="color:black;text-align:center;font-size:15px"><strong><span style="font-size:20px">本站官方TG交流群：</span><span><a href="https://t.me/feiyangdigital" target="_blank" style="color:red;font-size:20px;text-decoration:none">点击加入</a></span></strong></br><strong><span style="font-size:20px">老牌高端机场Rancho（<span style="color:blue">拥有数十不同国家节点，全部原生解锁支持奈飞、迪士尼、HBO等各种流媒体，全部套餐节点支持Chat GPT等各种AI，支持ISP住宅IP助力Tiktok等跨境贸易使用，采用最新Vless Encryption量子加密协议和AnyTLS双协议，在众多机场不稳定的今天，依旧生龙活虎，Vless Encryption量子加密协议和AnyTLS双协议+企业级跨境专线，是当下恶劣环境的最优解，全部套餐购买后直接赠送Emby影音服务，最高可体验4K杜比视界画展，媲美奈飞4K杜比视界，免费给购买了任意套餐的用户开放，稳定运营五年未跑路，在今年大多数机场纷纷倒闭的情况下，依旧坚挺扩张，还推出了包括Android TV在内的一键客户端，方便电视用户遥控操作，非常便利，强烈推荐，非常值得购买！</span>：<span><a href="https://www.mcwy.org" target="_blank" style="color:red;font-size:20px;text-decoration:none">点击注册</a></span></strong></br><strong><span style="font-size:20px">115蓝光4K原盘内部资源群</span></strong>）：</span><strong><span><a href="https://readme.115vip.shop/" target="_blank" style="color:red;font-size:20px;text-decoration:none">点击查看</a></span></strong></br><strong><span style="font-size:20px">奈飞、ChatGPT合租（<span style="color:blue">优惠码：feiyang</span>）：</span><span><a href="https://hezu.v1.mk/" style="color:red;font-size:20px;text-decoration:none">点击上车</a></span></strong></br>本站服务器赞助机场-牧场物语，BGP中继+IEPL企业级内网专线的高端机场，适合各个价位要求的用户，牧场物语采用最新的奈飞非自制剧解决方案，出口随机更换IP，确保尽可能的每个用户可以用上独立IP，以此来稳定解决奈飞非自制剧的封锁，并推出7*24小时奈飞非自制剧节点自动检测系统，用户再也不用自己手动一个个的乱试节点了，目前牧场的新加坡，台湾等节区域点均可做到24H稳定非自制剧观看，支持Chat-GPT和ISP住宅IP助力Tiktok等跨境贸易使用！</br></div>`, '信息面板', {
+      this.$alert(`<div style="color:black;text-align:center;font-size:15px"><strong><span style="font-size:20px">本站官方TG交流群：</span><span><a href="https://t.me/feiyangdigital" target="_blank" style="color:red;font-size:20px;text-decoration:none">点击加入</a></span></strong></br><strong><span style="font-size:20px">老牌高端机场Rancho（<span style="color:blue">原生支持奈飞非自制剧、Disney Plus、HBO等各种流媒体，支持Chat-GPT和ISP住宅IP助力Tiktok等跨境贸易使用，稳定运营六年未跑路，在2026年网络如此恶劣的环境下，依旧稳定</span>，<strong><span style="color:red">五一九折优惠码：2026-51-55</span></strong>）：</span><span><a href="https://www.mcwy.org" target="_blank" style="color:red;font-size:20px;text-decoration:none">点击注册</a></span></strong></br><strong><span style="font-size:20px">115蓝光4K原盘内部资源群（<strong><span style="color:red">五一九折优惠码：11590vip</span></strong>）：</span><span><a href="https://readme.115vip.shop/" target="_blank" style="color:red;font-size:20px;text-decoration:none">点击查看</a></span></strong></br><strong><span style="font-size:20px">奈飞、ChatGPT合租（<span style="color:blue">优惠码：feiyang</span>）：</span><span><a href="https://hezu.v1.mk/" style="color:red;font-size:20px;text-decoration:none">点击上车</a></span></strong></br>本站服务器赞助机场-牧场物语，BGP中继+IEPL企业级内网专线的高端机场，适合各个价位要求的用户，牧场物语采用最新的奈飞非自制剧解决方案，出口随机更换IP，确保尽可能的每个用户可以用上独立IP，以此来稳定解决奈飞非自制剧的封锁，并推出7*24小时奈飞非自制剧节点自动检测系统，用户再也不用自己手动一个个的乱试节点了，目前牧场的新加坡，台湾等节区域点均可做到24H稳定非自制剧观看，支持Chat-GPT和ISP住宅IP助力Tiktok等跨境贸易使用！</br></div>`, '信息面板', {
         confirmButtonText: '确定',
         dangerouslyUseHTMLString: true,
         customClass: 'msgbox'
