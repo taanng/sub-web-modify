@@ -144,7 +144,7 @@
                               <el-checkbox v-model="form.tpl.clash.doh" label="Clash.DoH"></el-checkbox>
                             </el-col>
                             <el-col :span="12">
-                              <el-checkbox v-model="form.appendType" label="插入节点类型"></el-checkbox>
+                              <el-checkbox v-model="form.diydns" label="开启私有化DNS"></el-checkbox>
                             </el-col>
                           </el-row>
                           <el-row :gutter="10">
@@ -173,9 +173,10 @@
                           </el-row>
                           <el-row :gutter="10">
                             <el-col :span="12">
-                              <div style="margin-left: 35%">
-                                <el-checkbox v-model="form.tpl.singbox.ipv6" label="Sing-Box支持IPV6"></el-checkbox>
-                              </div>
+                              <el-checkbox v-model="form.appendType" label="插入节点类型"></el-checkbox>
+                            </el-col>
+                            <el-col :span="12">
+                                <el-checkbox v-model="form.tpl.singbox.ipv6" label="SingBox-IPV6"></el-checkbox>
                             </el-col>
                           </el-row>
                           <el-button slot="reference">更多选项</el-button>
@@ -451,7 +452,7 @@ export default {
         clientTypes: {
           Clash: "clash",
           ShadowRocket: "shadowrocket",
-          "Surge4/5": "surge&ver=4",
+          "Surge5/6": "surge&ver=5",
           "Sing-Box": "singbox",
           V2Ray: "v2ray",
           Trojan: "trojan",
@@ -462,8 +463,8 @@ export default {
           "Quantumult X": "quanx",
           Loon: "loon",
           Mellow: "mellow",
+          Surge4: "surge&ver=4",
           Surge3: "surge&ver=3",
-          Surge2: "surge&ver=2",
           ClashR: "clashr",
           "Shadowsocks(SIP002)": "ss",
           "Shadowsocks Android(SIP008)": "sssub",
@@ -914,7 +915,7 @@ export default {
         rename: "",
         devid: "",
         interval: "",
-        diyua: "ShadowRocket",
+        diyua: "clash.meta/1.19.0",
         emoji: true,
         nodeList: false,
         extraset: false,
@@ -924,7 +925,8 @@ export default {
         tfo: false,
         sort: false,
         expand: true,
-        scv: false,
+        diydns: true,
+        scv: true,
         fdn: false,
         appendType: false,
         insert: false, // 是否插入默认订阅的节点，对应配置项 insert_url
@@ -1124,6 +1126,10 @@ export default {
         this.customSubUrl +=
             "&append_type=" + this.form.appendType.toString();
       }
+      if (this.form.diydns) {
+        this.customSubUrl +=
+            "&diydns=" + this.form.diydns.toString();
+      }
       if (this.form.tls13) {
         this.customSubUrl +=
             "&tls13=" + this.form.tls13.toString();
@@ -1276,7 +1282,7 @@ export default {
             this.form.clientType = target + "&ver=" + param.get("ver");
           } else if (target === 'surge') {
             //类型为surge,没有ver
-            this.form.clientType = target + "&ver=4"
+            this.form.clientType = target + "&ver=5"
           } else {
             //类型为其他
             this.form.clientType = target;
@@ -1311,6 +1317,9 @@ export default {
         }
         if (param.get("append_type")) {
           this.form.appendType = param.get("append_type") === 'true';
+        }
+        if (param.get("diydns")) {
+          this.form.diydns = param.get("diydns") === 'true';
         }
         if (param.get("tls13")) {
           this.form.tls13 = param.get("tls13");
@@ -1429,7 +1438,7 @@ export default {
             this.backendVersion = this.backendVersion.replace("subconverter", "SubConverter");
             let a = this.form.customBackend.indexOf("api.v1.mk") !== -1 || this.form.customBackend.indexOf("url.v1.mk") !== -1;
             let b = this.form.customBackend.indexOf("127.0.0.1") !== -1;
-            a ? this.$message.success(`${this.backendVersion}` + "肥羊负载均衡增强版后端，已屏蔽免费节点池（会返回403），额外支持Vless Reality/Encryption/xhttp+AnyTLS+TUIC+Mieru订阅转换") : b ? this.$message.success(`${this.backendVersion}` + "本地局域网自建版后端") : this.$message.success(`${this.backendVersion}` + "官方原版后端不支持vless/hysteria/anytls等订阅转换");
+            a ? this.$message.success(`${this.backendVersion}` + "肥羊负载均衡增强版后端，已屏蔽免费节点池（会返回403），额外支持Vless Reality/Encryption/xhttp+AnyTLS+TUIC+Mieru订阅转换，默认支持高端机场私有DNS") : b ? this.$message.success(`${this.backendVersion}` + "本地局域网自建版后端") : this.$message.success(`${this.backendVersion}` + "官方原版后端不支持vless/hysteria等订阅转换，也不支持高端机场私有DNS");
           })
           .catch(() => {
             this.$message.error("请求SubConverter版本号返回数据失败，该后端不可用！");
